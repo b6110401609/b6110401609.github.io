@@ -109,5 +109,52 @@ body{
 
 }
 
+@media (max-width: 1000px){
+    table{
+        font-size: 10px;
+    }
+}
+.sun{
+    background-color: orangered;
+}
 
+.mon{
+    background-color: yellow;
+}
 
+.tue{
+    background-color: violet;
+}
+
+.wed{
+    background-color: lime;
+}
+
+.thu{
+    background-color: orange;
+}
+
+.fri{
+    background-color: turquoise;
+}
+.sat{
+    background-color: orchid;
+}
+.sem{
+    background-color: #F03364;
+}
+.web{
+    background-color: salmon;
+}
+.ip{
+    background-color: silver;
+}
+.os{
+    background-color: steelblue;
+}
+.sa{
+    background-color: tomato;
+}
+.se{
+    background-color: wheat;
+}
