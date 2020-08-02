@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule</title>
+    <script lanuage = "JavaScript"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -59,40 +60,41 @@
             <td colspan="22"></td>
           </tr>
           <tr>
-            <th scope="row" colspan="2" class="mon">Monday</th>
-            <td colspan="6" class="sem">01418497 - 60 Seminar Sec. 5</td>
+            <th scope="row" colspan="2" class="mon" onclick="showmon(this.innerHTML)">Monday</th>
+            <td colspan="6" class="sem" onclick="showsem(this.innerHTML)">01418497 - 60 Seminar</td>
             <td colspan="16"></td>
           </tr>
           <tr>
-            <th scope="row" colspan="2" class="tue">Tuesday</th>
-            <td colspan="4" class="web">01418442 - 60 WebTech Sec. 1</td>
+            <th scope="row" colspan="2" class="tue" onclick="showtue(this.innerHTML)">Tuesday</th>
+            <td colspan="4" class="web" onclick="showwebtech(this.innerHTML)">01418442 - 60 WebTech</td>
             <td colspan="5"></td>
-            <td colspan="4" class="web">01418442 - 60 WebTech Sec. 11</td>
+            <td colspan="4" class="web" onclick="showwebtech(this.innerHTML)">01418442 - 60 WebTech</td>
             <td colspan="9"></td>
           </tr>
           <tr>
-            <th scope="row" colspan="2" class="wed">Wednesday</th>
+            <th scope="row" colspan="2" class="wed" onclick="showwed(this.innerHTML)">Wednesday</th>
             <td colspan="4"></td>
-            <td colspan="3" class="ip">01418341 - 60 IP Sec. 1</td>
+            <td colspan="3" class="ip" onclick="showip(this.innerHTML)">01418341 - 60 IP</td>
             <td colspan="1"></td>
-            <td colspan="4" class="os">01418331 - 60 OS Sec. 1</td>
-            <td colspan="4" class="sa">01418321 - 60 SA SEc. 1</td>
-            <td colspan="4" class="sa">01418321 - 60 SA Sec 11.</td>
+            <td colspan="4" class="os" onclick="showos(this.innerHTML)">01418331 - 60 OS</td>
+            <td colspan="4" class="sa" onclick="showsa(this.innerHTML)">01418321 - 60 SA</td>
+            <td colspan="4" class="sa" onclick="showsa(this.innerHTML)">01418321 - 60 SA</td>
             <td colspan="2"></td>
           </tr>
           <tr>
-            <th scope="row" colspan="2" class="thu">Thursday</th>
-            <td colspan="4" class="se">01418471 - 60 SE Sec. 11</td>
+            <th scope="row" colspan="2" class="thu" onclick="showthu(this.innerHTML)">Thursday</th>
+            <td colspan="4" class="se" onclick="showse(this.innerHTML)">01418471 - 60 SE</td>
             <td colspan="2"></td>
-            <td colspan="4" class="se">01418471 - 60 SE Sec. 1</td>
-            <td colspan="12"></td>
+            <td colspan="4" class="se" onclick="showse(this.innerHTML)">01418471 - 60 SE</td>
+            <td colspan="7"></td>
+            <td colspan="4" class = "phy" onclick="showarchery(this.innerHTML)">01175117 - 59 Archery</td>
           </tr>
           <tr>
-            <th scope="row" colspan="2" class="fri">Friday</th>
+            <th scope="row" colspan="2" class="fri" onclick="showfri(this.innerHTML)">Friday</th>
             <td colspan="4"></td>
-            <td colspan="3" class="ip">01418341 - 60 IP Sec. 1</td>
+            <td colspan="3" class="ip" onclick="showip(this.innerHTML)">01418341 - 60 IP</td>
             <td colspan="1"></td>
-            <td colspan="4" class="os">01418331 - 60 OS Sec. 1</td>
+            <td colspan="4" class="os" onclick="showos(this.innerHTML)">01418331 - 60 OS</td>
             <td colspan="10"></td>
           </tr>
           <tr>
@@ -102,9 +104,13 @@
         </tbody>
       </table>
 
-    <script src="schedule.js"></script>
+      <div id="day"></div>
+      <div id="sub"></div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+    <script src="schedule.js"></script>
 </body>
 </html>
