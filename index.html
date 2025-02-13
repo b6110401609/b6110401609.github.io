@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ใบแทนคำพูด</title>
+    <title>คำพูดจากใจ</title>
     <style>
         body {
             display: flex;
@@ -45,6 +45,9 @@
     </style>
 </head>
 <body>
+    <audio src="song.mp3" autoplay loop>
+        Your browser does not support the audio element.
+    </audio>
     <!-- <h1></h1> -->
     <div class="invitation-card show" id="card1">
         <p>จริงๆเว็บนี้เราแอบทำไว้ซักพักแล้วอะแต่พอสถานการณ์มันเปลี่ยนก็เลยต้องเปลี่ยนเนื้อหาซะงั้นจะไม่ใช้ก็ยังไงอยู่ยังไงเค้าก็ตั้งใจทำขึ้นมาก็เลยรวบรวมความกล้าที่จะส่งมาให้ดูเค้าหวังว่าเธอจะได้อ่านมันจนจบนะ จริงๆแล้วก็มีสิ่งที่อยากจะพูดเยอะเลย งั้นเริ่มเลยแล้วกันเนอะ</p>
@@ -57,13 +60,10 @@
         <p>เค้าเลยตัดสินใจที่จะเขียนความรู้สึกลงในนี้แทน เพื่อแทนทั้งคำขอบคุณและคำขอโทษจากใจเค้า ต่อไปก็หน้าสุดท้ายแล้วนะ</p>
     </div>
     <div class="invitation-card" id="card3">
-        <p>ถ้าเป็นไปได้วันเสาร์นี้เค้าอยากจะชวนเธอไปดูคอนเสิร์ตที่สยามนะ ยังไงถ้าเธอได้อ่านมาถึงตรงนี้ก็บอกเค้าด้วยนะ เค้าไม่รู้ว่ามันเหมาะสมที่จะชวนไหม</p>
+        <p>ถ้าเป็นไปได้วันเสาร์นี้เค้าอยากจะชวนเธอไปดูคอนเสิร์ตที่สยามนะ ยังไงถ้าเธอได้อ่านมาถึงตรงนี้ก็บอกเค้าด้วยนะเค้าไม่รู้ว่ามันเหมาะสมที่จะชวนไหม จริงๆก็อยากจะพิมพ์มากกว่านี้แต่เค้ารู้สึกว่าถ้าได้เจอหน้าแล้วคุยกันมันคงดีกว่า</p>
         <p>เป็นไปได้เค้าก็อยากให้เธอไปด้วยกันนะ</p>
     </div>
     <button class="next-button" onclick="nextCard()">ถัดไป ➡️</button>
-    <!-- <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/QUwxKWT6m7U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div> -->
     <script>
         let currentCard = 1;
 
