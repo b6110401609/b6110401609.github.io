@@ -48,24 +48,26 @@
     <!-- <audio src="song.mp3" autoplay loop>
         Your browser does not support the audio element.
     </audio> -->
-    <iframe src="song.mp3" allow="autoplay" style="display:none" id="iframeAudio">
-    </iframe> 
+    <iframe id="audioIframe" width="300" height="80" frameborder="0" src="about:blank"></iframe>
     <!-- <h1></h1> -->
     <div class="invitation-card show" id="card1">
+        <p>สวัสดีนะครับคุณครูโบเป็นยังไงบ้าง</p>
+    </div>
+    <div class="invitation-card" id="card2">
         <p>จริงๆเว็บนี้เราแอบทำไว้ซักพักแล้วอะแต่พอสถานการณ์มันเปลี่ยนก็เลยต้องเปลี่ยนเนื้อหาซะงั้นจะไม่ใช้ก็ยังไงอยู่ยังไงเค้าก็ตั้งใจทำขึ้นมาก็เลยรวบรวมความกล้าที่จะส่งมาให้ดูเค้าหวังว่าเธอจะได้อ่านมันจนจบนะ จริงๆแล้วก็มีสิ่งที่อยากจะพูดเยอะเลย งั้นเริ่มเลยแล้วกันเนอะ</p>
         <p>ก่อนอื่นเลยเค้าขอบคุณเธอมากนะ ตลอดหนึ่งเดือนกว่าๆที่เราคุยกันมาเค้าสนุกมากเลย เค้าขอบคุณที่เข้ามาเติมเต็มทำให้เค้ามีความสุขมากๆ เรียกได้ว่าเจอคนที่ดีคนมากๆคนหนึ่งในชีวิตเลย</p>
         <p>ขอบคุณที่เข้ามาเป็นสีสันให้กับชีวิตเค้านะ ถึงแม้ว่าตอนนี้สถานการณ์ของเรามันเปลี่ยนไปแล้วแต่เค้าก็ยังรู้สึกขอบคุณเธอมากๆ เค้าดีใจที่ยังได้คุยกับเธอต่อไปนะ</p>
     </div>
-    <div class="invitation-card" id="card2">
+    <div class="invitation-card" id="card3">
         <p>ต่อมาก็เค้าอยากจะขอโทษเธออีกครั้งด้วยนะ ที่วันนั้นเค้าใจร้อนแล้วเลือกถามอะไรแบบนั้นออกไป เค้าไม่ได้ตั้งใจแต่มันคงกลับไปแก้ไขอะไรไม่ได้แล้ว จริงๆเค้ารีบร้อนไปเองด้วยมันเลยทำให้การสื่อสารผิดไป</p>
         <p>ขอโทษที่ทำให้เสียความรู้สึกด้วยนะครับ ทั้งๆที่ใจจริงแล้วเค้าอยากจะถนอมความรู้สึกของเธอให้มากกว่านี้แท้ๆ ถึงแม้เค้าจะไม่ได้โทรคุยกับเธอเพื่อขอโทษแล้วก็ไม่รู้ด้วยว่าเราจะมีโอกาสได้เจอกันอีกไหม</p>
         <p>เค้าเลยตัดสินใจที่จะเขียนความรู้สึกลงในนี้แทน เพื่อแทนทั้งคำขอบคุณและคำขอโทษจากใจเค้า ต่อไปก็หน้าสุดท้ายแล้วนะ</p>
     </div>
-    <div class="invitation-card" id="card3">
+    <div class="invitation-card" id="card4">
         <p>ถ้าเป็นไปได้วันเสาร์นี้เค้าอยากจะชวนเธอไปดูคอนเสิร์ตที่สยามนะ ยังไงถ้าเธอได้อ่านมาถึงตรงนี้ก็บอกเค้าด้วยนะเค้าไม่รู้ว่ามันเหมาะสมที่จะชวนไหม จริงๆก็อยากจะพิมพ์มากกว่านี้แต่เค้ารู้สึกว่าถ้าได้เจอหน้าแล้วคุยกันมันคงดีกว่า</p>
         <p>เป็นไปได้เค้าก็อยากให้เธอไปด้วยกันนะ</p>
     </div>
-    <button class="next-button" onclick="nextCard()">ถัดไป ➡️</button>
+    <button class="next-button" id="nextButton" onclick="nextCard()">ถัดไป ➡️</button>
     <script>
         let currentCard = 1;
 
@@ -87,6 +89,35 @@
                 nextCardElement.classList.add('show');
             }
         }
+
+        var iframe = document.getElementById('audioIframe');
+        var audioHTML = `
+            <audio id="audioPlayer" autoplay muted>
+            <source src="song.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+            </audio>
+        `;
+
+        // Inject the audio player and a play button into the iframe
+        iframe.contentWindow.document.open();
+        iframe.contentWindow.document.write(audioHTML);
+        iframe.contentWindow.document.close();
+
+        var audioPlayer = iframe.contentWindow.document.getElementById('audioPlayer');
+
+        audioPlayer.volume = 0.1;
+
+        // Set up a click event on the play button to play the audio
+        var nextButton = document.getElementById('nextButton');
+
+        setTimeout(function() {
+            audioPlayer.muted = false; // Unmute the audio after a small delay
+            // audioPlayer.play();
+        }, 1000);
+
+        nextButton.addEventListener('click', function() {
+            audioPlayer.play();  // Start playing when the user clicks the button
+        })
     </script>
 </body>
 </html>
